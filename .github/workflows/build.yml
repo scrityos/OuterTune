@@ -1,9 +1,8 @@
 name: Build Release (Arm64)
 on:
-  workflow_dispatch:
   push:
     branches:
-      - '**'
+      - 'Test'
     paths-ignore:
       - 'README.md'
       - 'fastlane/**'
