@@ -58,11 +58,6 @@ fun SettingsScreen(
             onClick = { navController.navigate("settings/player") }
         )
         PreferenceEntry(
-            title = { Text(stringResource(R.string.local_player_settings_title)) },
-            icon = { Icon(Icons.Rounded.SdCard, null) },
-            onClick = { navController.navigate("settings/local") }
-        )
-        PreferenceEntry(
             title = { Text(stringResource(R.string.storage)) },
             icon = { Icon(Icons.Rounded.Storage, null) },
             onClick = { navController.navigate("settings/storage") }
@@ -76,11 +71,6 @@ fun SettingsScreen(
             title = { Text(stringResource(R.string.backup_restore)) },
             icon = { Icon(Icons.Rounded.Restore, null) },
             onClick = { navController.navigate("settings/backup_restore") }
-        )
-        PreferenceEntry(
-            title = { Text(stringResource(R.string.experimental_settings_title)) },
-            icon = { Icon(Icons.Rounded.WarningAmber, null) },
-            onClick = { navController.navigate("settings/experimental") }
         )
         PreferenceEntry(
             title = { Text(stringResource(R.string.about)) },
