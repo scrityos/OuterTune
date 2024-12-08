@@ -164,7 +164,7 @@ fun HomeScreen(
                 //        modifier = Modifier.weight(1f)
              //       )
 
-                    if (isLoggedIn) {
+                  //  if (isLoggedIn) {
                       //  NavigationTile(
                        //     title = stringResource(R.string.account),
                      //       icon = Icons.Rounded.Person,
@@ -174,7 +174,7 @@ fun HomeScreen(
                     //        modifier = Modifier.weight(1f)
                    //     )
                   //  }
-                }
+           //     }
 
                if (isLoggedIn && !recentActivity.isNullOrEmpty()) {
                     NavigationTitle(
