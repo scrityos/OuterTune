@@ -150,30 +150,30 @@ fun HomeScreen(
                         .fillMaxWidth()
                 ) 
                  {
-                    NavigationTile(
-                        title = stringResource(R.string.history),
-                        icon = Icons.Rounded.History,
-                        onClick = { navController.navigate("history") },
-                        modifier = Modifier.weight(1f)
-                    )
+               //     NavigationTile(
+               //         title = stringResource(R.string.history),
+                //        icon = Icons.Rounded.History,
+                //        onClick = { navController.navigate("history") },
+                 //       modifier = Modifier.weight(1f)
+                  //  )
 
-                    NavigationTile(
-                        title = stringResource(R.string.stats),
-                        icon = Icons.AutoMirrored.Rounded.TrendingUp,
-                        onClick = { navController.navigate("stats") },
-                        modifier = Modifier.weight(1f)
-                    )
+               //     NavigationTile(
+            //            title = stringResource(R.string.stats),
+                 //       icon = Icons.AutoMirrored.Rounded.TrendingUp,
+                  //      onClick = { navController.navigate("stats") },
+                //        modifier = Modifier.weight(1f)
+             //       )
 
                     if (isLoggedIn) {
-                        NavigationTile(
-                            title = stringResource(R.string.account),
-                            icon = Icons.Rounded.Person,
-                            onClick = {
-                                navController.navigate("account")
-                            },
-                            modifier = Modifier.weight(1f)
-                        )
-                    }
+                      //  NavigationTile(
+                       //     title = stringResource(R.string.account),
+                     //       icon = Icons.Rounded.Person,
+                     //       onClick = {
+                     //           navController.navigate("account")
+                      //      },
+                    //        modifier = Modifier.weight(1f)
+                   //     )
+                  //  }
                 }
 
                if (isLoggedIn && !recentActivity.isNullOrEmpty()) {
