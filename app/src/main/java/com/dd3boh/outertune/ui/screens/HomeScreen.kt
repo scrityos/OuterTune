@@ -149,7 +149,7 @@ fun HomeScreen(
                         .padding(horizontal = 12.dp, vertical = 6.dp)
                         .fillMaxWidth()
                 ) 
-                // {
+                 {
                   //  NavigationTile(
                 //        title = stringResource(R.string.history),
                   //      icon = Icons.Rounded.History,
