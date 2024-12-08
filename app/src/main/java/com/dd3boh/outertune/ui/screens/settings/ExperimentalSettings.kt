@@ -62,7 +62,19 @@ fun ExperimentalSettings(
             checked = devSettings,
             onCheckedChange = onDevSettingsChange
         )
+       // experimental settings
+        IconButton(
+            onClick = { uriHandler.openUri("https://github.com/abhiram79/flowtune") }
+         ) {
+             Icon(
+             painter = painterResource(R.drawable.github),
+             contentDescription = null
+            )
+           }
+       
 
+          // experimental setting row end!!!!
+       
         if (devSettings) {
             PreferenceGroupTitle(
                 title = stringResource(R.string.settings_debug)
