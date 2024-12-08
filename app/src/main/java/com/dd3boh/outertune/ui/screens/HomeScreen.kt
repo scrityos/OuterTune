@@ -148,87 +148,88 @@ fun HomeScreen(
                         .windowInsetsPadding(WindowInsets.systemBars.only(WindowInsetsSides.Horizontal))
                         .padding(horizontal = 12.dp, vertical = 6.dp)
                         .fillMaxWidth()
-                ) {
-                    NavigationTile(
-                        title = stringResource(R.string.history),
-                        icon = Icons.Rounded.History,
-                        onClick = { navController.navigate("history") },
-                        modifier = Modifier.weight(1f)
-                    )
+                ) 
+                // {
+                  //  NavigationTile(
+                //        title = stringResource(R.string.history),
+                  //      icon = Icons.Rounded.History,
+                    //    onClick = { navController.navigate("history") },
+               //         modifier = Modifier.weight(1f)
+               //     )
 
-                    NavigationTile(
-                        title = stringResource(R.string.stats),
-                        icon = Icons.AutoMirrored.Rounded.TrendingUp,
-                        onClick = { navController.navigate("stats") },
-                        modifier = Modifier.weight(1f)
-                    )
+               //     NavigationTile(
+                  //      title = stringResource(R.string.stats),
+                 //       icon = Icons.AutoMirrored.Rounded.TrendingUp,
+                   //     onClick = { navController.navigate("stats") },
+                   //     modifier = Modifier.weight(1f)
+               //     )
 
-                    if (isLoggedIn) {
-                        NavigationTile(
-                            title = stringResource(R.string.account),
-                            icon = Icons.Rounded.Person,
-                            onClick = {
-                                navController.navigate("account")
-                            },
-                            modifier = Modifier.weight(1f)
-                        )
-                    }
-                }
+               //     if (isLoggedIn) {
+                //        NavigationTile(
+                  //          title = stringResource(R.string.account),
+                  //          icon = Icons.Rounded.Person,
+                    //        onClick = {
+             //                   navController.navigate("account")
+                      //      },
+                 //           modifier = Modifier.weight(1f)
+               //         )
+                 //   }
+               // }
 
-                if (isLoggedIn && !recentActivity.isNullOrEmpty()) {
-                    NavigationTitle(
-                        title = stringResource(R.string.recent_activity)
-                    )
+  //              if (isLoggedIn && !recentActivity.isNullOrEmpty()) {
+      //              NavigationTitle(
+             //           title = stringResource(R.string.recent_activity)
+          //          )
 
-                    LazyHorizontalGrid(
-                        state = recentActivityGridState,
-                        rows = GridCells.Fixed(4),
-                        flingBehavior = rememberSnapFlingBehavior(snapLayoutInfoProvider),
-                        contentPadding = WindowInsets.systemBars
-                            .only(WindowInsetsSides.Horizontal)
-                            .asPaddingValues(),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(60.dp * 4)
-                    ) {
-                        items(
-                            items = recentActivity!!,
-                            key = { it.id }
-                        ) { item ->
-                            YouTubeCardItem(
-                                item,
-                                onClick = {
-                                    when (item) {
-                                        is PlaylistItem -> {
-                                            val playlistDb = recentPlaylistsDb
-                                                ?.firstOrNull { it.playlist.browseId == item.id }
+             //       LazyHorizontalGrid(
+        //                state = recentActivityGridState,
+           //             rows = GridCells.Fixed(4),
+           //             flingBehavior = rememberSnapFlingBehavior(snapLayoutInfoProvider),
+      //                  contentPadding = WindowInsets.systemBars
+           //                 .only(WindowInsetsSides.Horizontal)
+  //                          .asPaddingValues(),
+                    //    modifier = Modifier
+           //                 .fillMaxWidth()
+                        //    .height(60.dp * 4)
+              //      ) {
+                  //      items(
+                  //          items = recentActivity!!,
+             //               key = { it.id }
+           //             ) { item ->
+              //              YouTubeCardItem(
+             //                   item,
+              //                  onClick = {
+                //                    when (item) {
+               //                         is PlaylistItem -> {
+                         //                   val playlistDb = recentPlaylistsDb
+                       //                         ?.firstOrNull { it.playlist.browseId == item.id }
 
-                                            if (playlistDb != null && playlistDb.songCount != 0)
-                                                navController.navigate("local_playlist/${playlistDb.id}")
-                                            else
-                                                navController.navigate("online_playlist/${item.id}")
-                                        }
+                       //                     if (playlistDb != null && playlistDb.songCount != 0)
+                       //                         navController.navigate("local_playlist/${playlistDb.id}")
+                                    //        else
+                     //                           navController.navigate("online_playlist/${item.id}")
+                                     //   }
 
-                                        is AlbumItem -> navController.navigate("album/${item.id}")
+                        //                is AlbumItem -> navController.navigate("album/${item.id}")
 
-                                        is ArtistItem -> navController.navigate("artist/${item.id}")
-
-                                        else -> {}
-                                    }
-                                },
-                                isPlaying = isPlaying,
-                                isActive = when (item) {
-                                    is PlaylistItem -> queuePlaylistId == item.id
-                                    is AlbumItem -> queuePlaylistId == item.playlistId
-                                    is ArtistItem -> (queuePlaylistId == item.radioEndpoint?.playlistId ||
-                                                    queuePlaylistId == item.shuffleEndpoint?.playlistId ||
-                                                    queuePlaylistId == item.playEndpoint?.playlistId)
-                                    else -> false
-                                },
-                            )
-                        }
-                    }
-                }
+                    //  //                  is ArtistItem -> navController.navigate("artist/${item.id}")
+//
+                              //          else -> {}
+                      //              }
+                      //          },
+                 //               isPlaying = isPlaying,
+           //                     isActive = when (item) {
+                //                    is PlaylistItem -> queuePlaylistId == item.id
+                    //                is AlbumItem -> queuePlaylistId == item.playlistId
+              //                      is ArtistItem -> (queuePlaylistId == item.radioEndpoint?.playlistId ||
+                //                                    queuePlaylistId == item.shuffleEndpoint?.playlistId ||
+                             //                       queuePlaylistId == item.playEndpoint?.playlistId)
+                //                    else -> false
+          //                      },
+                //            )
+         //               }
+      //              }
+     //           }
 
                 NavigationTitle(
                     title = stringResource(R.string.quick_picks)
