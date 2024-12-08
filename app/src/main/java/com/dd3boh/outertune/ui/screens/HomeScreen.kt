@@ -151,7 +151,7 @@ fun HomeScreen(
                 ) 
                  {
                //     NavigationTile(
-               //         title = stringResource(R.string.history),
+              //          title = stringResource(R.string.history),
                 //        icon = Icons.Rounded.History,
                 //        onClick = { navController.navigate("history") },
                  //       modifier = Modifier.weight(1f)
@@ -164,17 +164,17 @@ fun HomeScreen(
                 //        modifier = Modifier.weight(1f)
              //       )
 
-                  //  if (isLoggedIn) {
-                      //  NavigationTile(
-                       //     title = stringResource(R.string.account),
-                     //       icon = Icons.Rounded.Person,
-                     //       onClick = {
-                     //           navController.navigate("account")
-                      //      },
-                    //        modifier = Modifier.weight(1f)
-                   //     )
-                  //  }
-           //     }
+                    if (isLoggedIn) {
+                        NavigationTile(
+                            title = stringResource(R.string.account),
+                            icon = Icons.Rounded.Person,
+                            onClick = {
+                                 navController.navigate("account")
+                              },
+                              modifier = Modifier.weight(1f)
+                        )
+                    }
+                }
 
                if (isLoggedIn && !recentActivity.isNullOrEmpty()) {
                     NavigationTitle(
