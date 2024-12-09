@@ -16,6 +16,7 @@
 
     <!-- Home -->
     <string name="history">History</string>
+    <string name="blank_sp"></string>
     <string name="stats">Stats</string>
     <string name="mood_and_genres">Mood and Genres</string>
     <string name="account">Account</string>
