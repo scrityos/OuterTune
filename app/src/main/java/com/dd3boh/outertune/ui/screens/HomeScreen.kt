@@ -166,8 +166,8 @@ fun HomeScreen(
 
                     if (isLoggedIn) {
                         NavigationTile(
-                            title = stringResource(R.string.null),
-                            icon = Icons.Rounded.null,
+                            title = stringResource(R.string.blank_sp),
+                            icon = Icons.Rounded.blank,
                             onClick = {
                                  navController.navigate("account")
                               },
